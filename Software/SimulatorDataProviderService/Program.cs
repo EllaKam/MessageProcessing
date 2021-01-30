@@ -31,7 +31,7 @@ namespace SimulatorDataProviderService
             Source
                 .Cycle(() => Enumerable.Range(1, 100).GetEnumerator())
                 .Select(c => c.ToString())
-                .Select(elem => ProducerMessage.Single(new ProducerRecord<Null, string>("CovidMessages", elem)))
+                .Select(elem => ProducerMessage.Single(new ProducerRecord<Null, string>("akka100", elem)))
                 .Via(KafkaProducer.FlexiFlow<Null, string, NotUsed>(producerSettings))
                 .Select(result =>
                 {
