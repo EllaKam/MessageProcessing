@@ -21,7 +21,7 @@ namespace MessagesHandlerService
         {
             AppDisplay appDisplay = new AppDisplay();
             appDisplay.Init();
-            QueueWorker worker =  new QueueWorker();
+            QueueWorkerConfluent worker = new QueueWorkerConfluent();
             string host = ConfigurationManager.AppSettings["Host"];
             string group = ConfigurationManager.AppSettings["GroupName"];
             string queue = ConfigurationManager.AppSettings["QueueName"];
@@ -29,6 +29,6 @@ namespace MessagesHandlerService
             worker.Work();
             Console.ReadLine();
         }
-        
+
     }
 }
